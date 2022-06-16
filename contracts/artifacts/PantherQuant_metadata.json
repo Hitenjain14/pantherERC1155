@@ -568,11 +568,11 @@
 			]
 		},
 		"contracts/PantherQuant.sol": {
-			"keccak256": "0xd030e9c746f487abfa24ad43fd7f8d27deb77b0aaf504cb9b4a3de6b478dd1af",
+			"keccak256": "0xc4a8d344a9e151870288d401e0d2aad1d9c4c1e2d1986a02fef558d946ab20fb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9a026bfc53acc4982449d366cd29e38d09e0c5f566b152bfa0707e488ef99130",
-				"dweb:/ipfs/QmP6miApqZ3jceg31uut1Q2r6fsDk4R3nQz7xMHxthY2yp"
+				"bzz-raw://ff10305ea5c04dbc986b24a00726fe227e6a9e8e476a25ca5cdd4bcf037a0800",
+				"dweb:/ipfs/QmUn9V8h4kUNu22MyddtMnDBdUeDLCiZDDYK8dQwzAoBFr"
 			]
 		}
 	},

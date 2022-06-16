@@ -5,7 +5,7 @@ import "./ERC1155.sol";
 import "./Ownable.sol";
 
 contract PantherQuant is ERC1155, Ownable {
-    constructor() ERC1155("https://image/api/") {}
+    constructor() ERC1155("ipfs://QmdS21RpAZhThi6XDoLKvponQk1XbqepaGWEzDDyLms4ui") {}
 
     function setURI(string memory newuri) public onlyOwner {
         _setURI(newuri);
