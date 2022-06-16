@@ -5,7 +5,11 @@ import "./ERC1155.sol";
 import "./Ownable.sol";
 
 contract PantherQuant is ERC1155, Ownable {
-    constructor() ERC1155("ipfs://QmdS21RpAZhThi6XDoLKvponQk1XbqepaGWEzDDyLms4ui") {}
+    constructor()
+        ERC1155("ipfs://QmdS21RpAZhThi6XDoLKvponQk1XbqepaGWEzDDyLms4ui")
+    {}
+
+    string public name = "Panther Quant Golden Egg";
 
     function setURI(string memory newuri) public onlyOwner {
         _setURI(newuri);
