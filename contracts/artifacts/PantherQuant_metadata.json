@@ -267,6 +267,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "owner",
 				"outputs": [
 					{
@@ -489,8 +502,8 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 10000
 		},
 		"remappings": []
 	},
@@ -568,11 +581,11 @@
 			]
 		},
 		"contracts/PantherQuant.sol": {
-			"keccak256": "0xc4a8d344a9e151870288d401e0d2aad1d9c4c1e2d1986a02fef558d946ab20fb",
+			"keccak256": "0xe0d2cf15342cc9762bd3ba828b95798ec0b3d6742349059b8452b5bde79eb588",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ff10305ea5c04dbc986b24a00726fe227e6a9e8e476a25ca5cdd4bcf037a0800",
-				"dweb:/ipfs/QmUn9V8h4kUNu22MyddtMnDBdUeDLCiZDDYK8dQwzAoBFr"
+				"bzz-raw://19ba43df41010cf1885ef8e2dab7b70385da5a7d2bd6a38e3eca967624f28ff1",
+				"dweb:/ipfs/QmWmehNFFvp49Q9bjQGxzF6jTLqAMRRmrDnBmP46r6atvq"
 			]
 		}
 	},
