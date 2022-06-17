@@ -18,7 +18,7 @@ const init = async () => {
   for (let i = 6; i < list.length; i++) {
     const gasPrice = await web3.eth.getGasPrice();
     const gwei = gasPrice / 1000000000;
-    if (gwei <= 400) {
+    if (gwei > 400) {
       console.log('skipped', list[i].wallets);
       const data = fs.readFileSync('missed.json');
       const json = JSON.parse(data.toString());
@@ -26,18 +26,24 @@ const init = async () => {
       json['wallets'].push({ wallet: list[i].wallets.toString() });
       let jsonStr = JSON.stringify(json);
       fs.writeFile('missed.json', jsonStr, (err) => {});
-
-      try {
-        console.log(`minting ${i} token`);
-        const txn = await contract.methods.mintOne(list[i].wallets, 1, 1).send({
-          from: '0x59109E77C2d9eE837768425C4f37e6BdfF2cFaD1',
-          gasPrice: gasPrice,
-        });
-        console.log(txn);
-      } catch (err) {
-        console.log(err);
-        console.log(`error in minting ${i} token`);
-      }
+      continue;
+    }
+    try {
+      console.log(`minting ${i} token`);
+      const txn = await contract.methods.mintOne(list[i].wallets, 1, 1).send({
+        from: '0x59109E77C2d9eE837768425C4f37e6BdfF2cFaD1',
+        gasPrice: gasPrice,
+      });
+      console.log(txn);
+    } catch (err) {
+      console.log(err);
+      console.log(`error in minting ${i} token`);
+      const data = fs.readFileSync('missed.json');
+      const json = JSON.parse(data.toString());
+      console.log(json);
+      json['wallets'].push({ wallet: list[i].wallets.toString() });
+      let jsonStr = JSON.stringify(json);
+      fs.writeFile('missed.json', jsonStr, (err) => {});
     }
   }
 };
