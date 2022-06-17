@@ -15,8 +15,8 @@ const init = async () => {
   const web3 = new Web3(provider);
 
   const contract = new web3.eth.Contract(abi, address, { gas: 80000 });
-  for (let i = 101; i < list.length; i++) {
-    const gasPrice = await web3.eth.getGasPrice();
+  for (let i = 103; i < list.length; i++) {
+    const gasPrice = (await web3.eth.getGasPrice()) * 2;
     const gwei = gasPrice / 1000000000;
     if (gwei > 400) {
       console.log('skipped', list[i].wallets);
@@ -30,7 +30,7 @@ const init = async () => {
       try {
         console.log(`minting ${i} token`);
         const b = await contract.methods.balanceOf(list[i].wallets, 1).call();
-        if (b == 0) {
+        if (b < 1) {
           const txn = await contract.methods
             .mintOne(list[i].wallets, 1, 1)
             .send({
