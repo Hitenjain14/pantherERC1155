@@ -1,9 +1,5 @@
 exports.abi = [
-  {
-    inputs: [],
-    stateMutability: 'nonpayable',
-    type: 'constructor',
-  },
+  { inputs: [], stateMutability: 'nonpayable', type: 'constructor' },
   {
     anonymous: false,
     inputs: [
@@ -19,12 +15,7 @@ exports.abi = [
         name: 'operator',
         type: 'address',
       },
-      {
-        indexed: false,
-        internalType: 'bool',
-        name: 'approved',
-        type: 'bool',
-      },
+      { indexed: false, internalType: 'bool', name: 'approved', type: 'bool' },
     ],
     name: 'ApprovalForAll',
     type: 'event',
@@ -57,18 +48,8 @@ exports.abi = [
         name: 'operator',
         type: 'address',
       },
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'from',
-        type: 'address',
-      },
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'to',
-        type: 'address',
-      },
+      { indexed: true, internalType: 'address', name: 'from', type: 'address' },
+      { indexed: true, internalType: 'address', name: 'to', type: 'address' },
       {
         indexed: false,
         internalType: 'uint256[]',
@@ -94,24 +75,9 @@ exports.abi = [
         name: 'operator',
         type: 'address',
       },
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'from',
-        type: 'address',
-      },
-      {
-        indexed: true,
-        internalType: 'address',
-        name: 'to',
-        type: 'address',
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'id',
-        type: 'uint256',
-      },
+      { indexed: true, internalType: 'address', name: 'from', type: 'address' },
+      { indexed: true, internalType: 'address', name: 'to', type: 'address' },
+      { indexed: false, internalType: 'uint256', name: 'id', type: 'uint256' },
       {
         indexed: false,
         internalType: 'uint256',
@@ -125,111 +91,47 @@ exports.abi = [
   {
     anonymous: false,
     inputs: [
-      {
-        indexed: false,
-        internalType: 'string',
-        name: 'value',
-        type: 'string',
-      },
-      {
-        indexed: true,
-        internalType: 'uint256',
-        name: 'id',
-        type: 'uint256',
-      },
+      { indexed: false, internalType: 'string', name: 'value', type: 'string' },
+      { indexed: true, internalType: 'uint256', name: 'id', type: 'uint256' },
     ],
     name: 'URI',
     type: 'event',
   },
   {
     inputs: [
-      {
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
-      },
-      {
-        internalType: 'uint256',
-        name: 'id',
-        type: 'uint256',
-      },
+      { internalType: 'address', name: 'account', type: 'address' },
+      { internalType: 'uint256', name: 'id', type: 'uint256' },
     ],
     name: 'balanceOf',
-    outputs: [
-      {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256',
-      },
-    ],
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     stateMutability: 'view',
     type: 'function',
   },
   {
     inputs: [
-      {
-        internalType: 'address[]',
-        name: 'accounts',
-        type: 'address[]',
-      },
-      {
-        internalType: 'uint256[]',
-        name: 'ids',
-        type: 'uint256[]',
-      },
+      { internalType: 'address[]', name: 'accounts', type: 'address[]' },
+      { internalType: 'uint256[]', name: 'ids', type: 'uint256[]' },
     ],
     name: 'balanceOfBatch',
-    outputs: [
-      {
-        internalType: 'uint256[]',
-        name: '',
-        type: 'uint256[]',
-      },
-    ],
+    outputs: [{ internalType: 'uint256[]', name: '', type: 'uint256[]' }],
     stateMutability: 'view',
     type: 'function',
   },
   {
     inputs: [
-      {
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
-      },
-      {
-        internalType: 'address',
-        name: 'operator',
-        type: 'address',
-      },
+      { internalType: 'address', name: 'account', type: 'address' },
+      { internalType: 'address', name: 'operator', type: 'address' },
     ],
     name: 'isApprovedForAll',
-    outputs: [
-      {
-        internalType: 'bool',
-        name: '',
-        type: 'bool',
-      },
-    ],
+    outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
     stateMutability: 'view',
     type: 'function',
   },
   {
     inputs: [
-      {
-        internalType: 'address[]',
-        name: 'account',
-        type: 'address[]',
-      },
-      {
-        internalType: 'uint256',
-        name: 'id',
-        type: 'uint256',
-      },
-      {
-        internalType: 'uint256',
-        name: 'amount',
-        type: 'uint256',
-      },
+      { internalType: 'address[]', name: 'account', type: 'address[]' },
+      { internalType: 'uint256', name: 'id', type: 'uint256' },
+      { internalType: 'uint256', name: 'amount', type: 'uint256' },
     ],
     name: 'mint',
     outputs: [],
@@ -238,21 +140,9 @@ exports.abi = [
   },
   {
     inputs: [
-      {
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
-      },
-      {
-        internalType: 'uint256',
-        name: 'id',
-        type: 'uint256',
-      },
-      {
-        internalType: 'uint256',
-        name: 'amount',
-        type: 'uint256',
-      },
+      { internalType: 'address', name: 'account', type: 'address' },
+      { internalType: 'uint256', name: 'id', type: 'uint256' },
+      { internalType: 'uint256', name: 'amount', type: 'uint256' },
     ],
     name: 'mintOne',
     outputs: [],
@@ -261,14 +151,15 @@ exports.abi = [
   },
   {
     inputs: [],
+    name: 'name',
+    outputs: [{ internalType: 'string', name: '', type: 'string' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
     name: 'owner',
-    outputs: [
-      {
-        internalType: 'address',
-        name: '',
-        type: 'address',
-      },
-    ],
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
     stateMutability: 'view',
     type: 'function',
   },
@@ -281,31 +172,11 @@ exports.abi = [
   },
   {
     inputs: [
-      {
-        internalType: 'address',
-        name: 'from',
-        type: 'address',
-      },
-      {
-        internalType: 'address',
-        name: 'to',
-        type: 'address',
-      },
-      {
-        internalType: 'uint256[]',
-        name: 'ids',
-        type: 'uint256[]',
-      },
-      {
-        internalType: 'uint256[]',
-        name: 'amounts',
-        type: 'uint256[]',
-      },
-      {
-        internalType: 'bytes',
-        name: 'data',
-        type: 'bytes',
-      },
+      { internalType: 'address', name: 'from', type: 'address' },
+      { internalType: 'address', name: 'to', type: 'address' },
+      { internalType: 'uint256[]', name: 'ids', type: 'uint256[]' },
+      { internalType: 'uint256[]', name: 'amounts', type: 'uint256[]' },
+      { internalType: 'bytes', name: 'data', type: 'bytes' },
     ],
     name: 'safeBatchTransferFrom',
     outputs: [],
@@ -314,31 +185,11 @@ exports.abi = [
   },
   {
     inputs: [
-      {
-        internalType: 'address',
-        name: 'from',
-        type: 'address',
-      },
-      {
-        internalType: 'address',
-        name: 'to',
-        type: 'address',
-      },
-      {
-        internalType: 'uint256',
-        name: 'id',
-        type: 'uint256',
-      },
-      {
-        internalType: 'uint256',
-        name: 'amount',
-        type: 'uint256',
-      },
-      {
-        internalType: 'bytes',
-        name: 'data',
-        type: 'bytes',
-      },
+      { internalType: 'address', name: 'from', type: 'address' },
+      { internalType: 'address', name: 'to', type: 'address' },
+      { internalType: 'uint256', name: 'id', type: 'uint256' },
+      { internalType: 'uint256', name: 'amount', type: 'uint256' },
+      { internalType: 'bytes', name: 'data', type: 'bytes' },
     ],
     name: 'safeTransferFrom',
     outputs: [],
@@ -347,16 +198,8 @@ exports.abi = [
   },
   {
     inputs: [
-      {
-        internalType: 'address',
-        name: 'operator',
-        type: 'address',
-      },
-      {
-        internalType: 'bool',
-        name: 'approved',
-        type: 'bool',
-      },
+      { internalType: 'address', name: 'operator', type: 'address' },
+      { internalType: 'bool', name: 'approved', type: 'bool' },
     ],
     name: 'setApprovalForAll',
     outputs: [],
@@ -364,66 +207,30 @@ exports.abi = [
     type: 'function',
   },
   {
-    inputs: [
-      {
-        internalType: 'string',
-        name: 'newuri',
-        type: 'string',
-      },
-    ],
+    inputs: [{ internalType: 'string', name: 'newuri', type: 'string' }],
     name: 'setURI',
     outputs: [],
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [
-      {
-        internalType: 'bytes4',
-        name: 'interfaceId',
-        type: 'bytes4',
-      },
-    ],
+    inputs: [{ internalType: 'bytes4', name: 'interfaceId', type: 'bytes4' }],
     name: 'supportsInterface',
-    outputs: [
-      {
-        internalType: 'bool',
-        name: '',
-        type: 'bool',
-      },
-    ],
+    outputs: [{ internalType: 'bool', name: '', type: 'bool' }],
     stateMutability: 'view',
     type: 'function',
   },
   {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'newOwner',
-        type: 'address',
-      },
-    ],
+    inputs: [{ internalType: 'address', name: 'newOwner', type: 'address' }],
     name: 'transferOwnership',
     outputs: [],
     stateMutability: 'nonpayable',
     type: 'function',
   },
   {
-    inputs: [
-      {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256',
-      },
-    ],
+    inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
     name: 'uri',
-    outputs: [
-      {
-        internalType: 'string',
-        name: '',
-        type: 'string',
-      },
-    ],
+    outputs: [{ internalType: 'string', name: '', type: 'string' }],
     stateMutability: 'view',
     type: 'function',
   },
