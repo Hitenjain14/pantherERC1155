@@ -15,7 +15,7 @@ const init = async () => {
   const web3 = new Web3(provider);
 
   const contract = new web3.eth.Contract(abi, address, { gas: 80000 });
-  for (let i = 6; i < list.length; i++) {
+  for (let i = 101; i < list.length; i++) {
     const gasPrice = await web3.eth.getGasPrice();
     const gwei = gasPrice / 1000000000;
     if (gwei > 400) {
@@ -26,24 +26,29 @@ const init = async () => {
       json['wallets'].push({ wallet: list[i].wallets.toString() });
       let jsonStr = JSON.stringify(json);
       fs.writeFile('missed.json', jsonStr, (err) => {});
-      continue;
-    }
-    try {
-      console.log(`minting ${i} token`);
-      const txn = await contract.methods.mintOne(list[i].wallets, 1, 1).send({
-        from: '0x59109E77C2d9eE837768425C4f37e6BdfF2cFaD1',
-        gasPrice: gasPrice,
-      });
-      console.log(txn);
-    } catch (err) {
-      console.log(err);
-      console.log(`error in minting ${i} token`);
-      const data = fs.readFileSync('missed.json');
-      const json = JSON.parse(data.toString());
-      console.log(json);
-      json['wallets'].push({ wallet: list[i].wallets.toString() });
-      let jsonStr = JSON.stringify(json);
-      fs.writeFile('missed.json', jsonStr, (err) => {});
+    } else {
+      try {
+        console.log(`minting ${i} token`);
+        const b = await contract.methods.balanceOf(list[i].wallets, 1).call();
+        if (b == 0) {
+          const txn = await contract.methods
+            .mintOne(list[i].wallets, 1, 1)
+            .send({
+              from: '0x59109E77C2d9eE837768425C4f37e6BdfF2cFaD1',
+              gasPrice: gasPrice,
+            });
+          console.log(txn);
+        }
+      } catch (err) {
+        console.log(err);
+        console.log(`error in minting ${i} token`);
+        const data = fs.readFileSync('missed.json');
+        const json = JSON.parse(data.toString());
+        console.log(json);
+        json['wallets'].push({ wallet: list[i].wallets.toString() });
+        let jsonStr = JSON.stringify(json);
+        fs.writeFile('missed.json', jsonStr, (err) => {});
+      }
     }
   }
 };
