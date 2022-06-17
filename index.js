@@ -15,10 +15,11 @@ const init = async () => {
   const web3 = new Web3(provider);
 
   const contract = new web3.eth.Contract(abi, address, { gas: 80000 });
-  for (let i = 103; i < list.length; i++) {
-    const gasPrice = (await web3.eth.getGasPrice()) * 2;
+  for (let i = 106; i < list.length; i++) {
+    const gasPrice = 120000000000;
     const gwei = gasPrice / 1000000000;
-    if (gwei > 400) {
+    console.log(gwei);
+    if (gwei > 300) {
       console.log('skipped', list[i].wallets);
       const data = fs.readFileSync('missed.json');
       const json = JSON.parse(data.toString());
@@ -28,9 +29,9 @@ const init = async () => {
       fs.writeFile('missed.json', jsonStr, (err) => {});
     } else {
       try {
-        console.log(`minting ${i} token`);
         const b = await contract.methods.balanceOf(list[i].wallets, 1).call();
         if (b < 1) {
+          console.log(`minting ${i} token`);
           const txn = await contract.methods
             .mintOne(list[i].wallets, 1, 1)
             .send({
